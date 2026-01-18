@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>特耐塗創工程行 x 珅衡室內設計 | 專業工程與空間美學</title>
+    <meta name="description" content="特耐塗創工程行與珅衡室內設計聯合官網。提供外牆仿石漆、藝術塗裝、室內設計、老屋翻新與統包工程服務。服務區域：桃園、雙北、基隆。">
+    
+    <!-- Google Fonts: Noto Sans TC -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (CDN for standalone file) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Config for Brand Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#003399',    // 珅衡主色 (Royal Blue)
+                            gold: '#FFCC00',    // 珅衡輔色
+                            dark: '#1a1a1a',    // 通用深色
+                            gray: '#f4f4f5',    // 背景灰
+                            industrial: '#475569' // 特耐工程灰
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+        }
+
+        /* Utility for Background Images */
+        .bg-hero {
+            background-image: linear-gradient(rgba(0, 30, 80, 0.85), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .bg-pattern {
+            background-color: #f8fafc;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e2e8f0' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        /* Animation */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased bg-gray-50">
+
+    <!-- Navigation -->
+    <header class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-md transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Brand Logo Area -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-full bg-brand-blue flex items-center justify-center text-brand-gold font-bold text-xl border-2 border-brand-gold shadow-lg group-hover:scale-105 transition-transform">
+                    SH
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-bold text-brand-blue tracking-wide leading-none">特耐塗創 x 珅衡設計</span>
+                    <span class="text-xs text-gray-500 font-medium tracking-wider mt-1">ENGINEERING & INTERIOR DESIGN</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex space-x-8 items-center font-medium text-gray-600">
+                <a href="#about" class="hover:text-brand-blue transition-colors relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-brand-blue after:left-0 after:-bottom-1 after:transition-all hover:after:w-full">關於我們</a>
+                <a href="#services-eng" class="hover:text-brand-blue transition-colors">工程服務</a>
+                <a href="#services-design" class="hover:text-brand-blue transition-colors">室內設計</a>
+                <a href="#portfolio" class="hover:text-brand-blue transition-colors">實績案例</a>
+                <a href="#csr" class="hover:text-brand-blue transition-colors">公益與理念</a>
+                <a href="#contact" class="px-6 py-2 bg-brand-blue text-white rounded-full hover:bg-blue-800 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                    立即預約
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-700 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full left-0 top-full shadow-xl">
+            <div class="flex flex-col p-4 space-y-4 font-medium">
+                <a href="#about" class="text-gray-700 hover:text-brand-blue">關於我們</a>
+                <a href="#services-eng" class="text-gray-700 hover:text-brand-blue">工程服務</a>
+                <a href="#services-design" class="text-gray-700 hover:text-brand-blue">室內設計</a>
+                <a href="#portfolio" class="text-gray-700 hover:text-brand-blue">實績案例</a>
+                <a href="#csr" class="text-gray-700 hover:text-brand-blue">公益與理念</a>
+                <a href="#contact" class="text-center w-full py-3 bg-brand-blue text-white rounded-lg">立即預約</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center bg-hero text-white pt-16">
+        <div class="container mx-auto px-6 text-center z-10">
+            <div class="inline-block px-4 py-1 border border-brand-gold rounded-full text-brand-gold text-sm font-semibold mb-6 fade-in-up bg-black/30 backdrop-blur-sm">
+                桃園・雙北・基隆 | 專業整合服務
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight fade-in-up delay-100">
+                從外牆防石漆到<span class="text-brand-gold">藝術塗裝</span><br>
+                讓牆面成為空間最會說話的一面
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto fade-in-up delay-200 font-light">
+                特耐塗創工程行 x 珅衡室內設計<br>
+                結合「職人工程技術」與「專業空間美學」，為您打造理想的居住品質。
+            </p>
+            
+            <div class="flex flex-col md:flex-row gap-4 justify-center fade-in-up delay-300">
+                <a href="#services-eng" class="px-8 py-4 bg-brand-industrial hover:bg-gray-600 text-white rounded-lg transition-all shadow-lg flex items-center justify-center gap-2 border border-gray-500">
+                    <i class="fas fa-paint-roller"></i> 了解工程服務
+                </a>
+                <a href="#services-design" class="px-8 py-4 bg-brand-blue hover:bg-blue-800 text-white rounded-lg transition-all shadow-lg flex items-center justify-center gap-2 border border-blue-700">
+                    <i class="fas fa-pencil-ruler"></i> 預約設計諮詢
+                </a>
+            </div>
+
+            <!-- Scarcity Notification -->
+            <div class="mt-12 bg-black/50 backdrop-blur-md p-4 rounded-lg inline-block border-l-4 border-yellow-500 fade-in-up delay-300 max-w-lg">
+                <p class="text-sm md:text-base text-yellow-100 flex items-center gap-2 text-left">
+                    <i class="fas fa-exclamation-circle text-yellow-400"></i>
+                    <span><strong>目前工程排程公告：</strong> 感謝客戶支持，工程已排至 2026 年中。好的品質值得等待，歡迎提早諮詢規劃。</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section (Split View) -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">專業分工，雙強聯手</h2>
+                <div class="w-24 h-1 bg-brand-blue mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">我們相信術業有專攻，由「特耐塗創」負責堅實的工程技術，由「珅衡設計」負責細膩的空間規劃，提供一條龍的完整體驗。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Te-Nai Engineering -->
+                <div class="bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gray-200 rounded-bl-full -mr-16 -mt-16 opacity-50 group-hover:scale-110 transition-transform"></div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-brand-industrial text-white rounded-lg flex items-center justify-center text-2xl shadow-lg">
+                            <i class="fas fa-hard-hat"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-800">特耐塗創工程行</h3>
+                            <p class="text-gray-500 font-medium">負責人：陳得得 (熊貓)</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        「每天衝衝忙忙，只為每一面牆的完美收尾。」<br><br>
+                        主要負責人熊貓，長年深耕桃園與雙北工地。我們不打價格戰，只做品質戰。從大樓公設的柵欄烤漆、外牆的仿石漆工程，到室內極致質感的藝術塗裝，我們堅持親自監工，按部就班。雖然目前工期滿載，但每一個案場我們都堅持「一場一週，做到最好」。
+                    </p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> 專職油漆與特殊塗裝</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> 實地監工，注重收尾</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> 服務區域：桃園、雙北、基隆</li>
+                    </ul>
+                </div>
+
+                <!-- Shen-Heng Design -->
+                <div class="bg-blue-50/50 p-8 rounded-2xl shadow-sm border border-blue-100 hover:shadow-md transition-shadow relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-blue rounded-bl-full -mr-16 -mt-16 opacity-10 group-hover:scale-110 transition-transform"></div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-brand-blue text-brand-gold rounded-lg flex items-center justify-center text-2xl shadow-lg">
+                            <i class="fas fa-drafting-compass"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-800">珅衡室內設計</h3>
+                            <p class="text-gray-500 font-medium">負責人：陳佩君</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        成立於 2019 年，專注於「室內裝修，空間規劃」。<br><br>
+                        我們提供從設計、施工到材料供應的一條龍服務。不論是老屋翻新的結構補強，還是商業空間的風格塑造，珅衡團隊秉持專業認證與合法立案的背景，為客戶提供最安心的保障。我們的設計不僅追求美感，更融合了在地情感與實用機能。
+                    </p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-brand-blue"></i> 合法室內裝修業者</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-brand-blue"></i> 設計施工與建材供應一條龍</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-brand-blue"></i> 積極投入社會公益 (CSR)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 bg-pattern" id="services-main">
+        <div class="container mx-auto px-6">
+            
+            <!-- Engineering Services -->
+            <div id="services-eng" class="mb-20 scroll-mt-24">
+                <div class="flex items-center gap-4 mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800">工程專業項目</h2>
+                    <span class="px-3 py-1 bg-brand-industrial text-white text-xs rounded-full">特耐塗創</span>
+                    <div class="h-px bg-gray-300 flex-grow ml-4"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Card 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all border-l-4 border-brand-industrial group">
+                        <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-brand-industrial text-xl mb-4 group-hover:bg-brand-industrial group-hover:text-white transition-colors">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">外牆仿石漆工程</h3>
+                        <p class="text-gray-600 text-sm mb-4">適用於自地自建、舊屋拉皮翻新。完成品接近真石材質感，耐候性佳，提升建築價值。</p>
+                        <ul class="text-sm text-gray-500 space-y-1">
+                            <li>• 桃園外牆仿石漆實績</li>
+                            <li>• 耐久防水保護</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all border-l-4 border-brand-industrial group">
+                        <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-brand-industrial text-xl mb-4 group-hover:bg-brand-industrial group-hover:text-white transition-colors">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">大樓公設與社區空間</h3>
+                        <p class="text-gray-600 text-sm mb-4">針對管委會與物業公司，提供梯廳、柵欄烤漆、地下室牆面修補等大面積施工服務。</p>
+                        <ul class="text-sm text-gray-500 space-y-1">
+                            <li>• 梯廳柵欄烤漆</li>
+                            <li>• 公共區域翻新</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all border-l-4 border-brand-industrial group">
+                        <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-brand-industrial text-xl mb-4 group-hover:bg-brand-industrial group-hover:text-white transition-colors">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">藝術漆與特殊塗裝</h3>
+                        <p class="text-gray-600 text-sm mb-4">高端住宅首選。包含可酷力藝術漆、藏金色調牆面、各式仿材質紋理，為設計加分。</p>
+                        <ul class="text-sm text-gray-500 space-y-1">
+                            <li>• 配合室內設計師</li>
+                            <li>• 獨一無二的手作紋理</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design Services -->
+            <div id="services-design" class="scroll-mt-24">
+                <div class="flex items-center gap-4 mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800">設計與裝修項目</h2>
+                    <span class="px-3 py-1 bg-brand-blue text-white text-xs rounded-full">珅衡設計</span>
+                    <div class="h-px bg-gray-300 flex-grow ml-4"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all border-t-4 border-brand-blue">
+                        <h3 class="text-lg font-bold text-brand-blue mb-2">住宅空間設計</h3>
+                        <p class="text-gray-600 text-sm">新成屋規劃、老屋翻新、格局重整。從平面配置到3D效果圖，預見未來的家。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all border-t-4 border-brand-blue">
+                        <h3 class="text-lg font-bold text-brand-blue mb-2">商業空間規劃</h3>
+                        <p class="text-gray-600 text-sm">店面裝修、辦公室規劃、餐飲空間。結合品牌形象與動線設計，提升商業價值。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all border-t-4 border-brand-blue">
+                        <h3 class="text-lg font-bold text-brand-blue mb-2">統包工程服務</h3>
+                        <p class="text-gray-600 text-sm">水電、木作、泥作、輕鋼架、消防安全設備。單一窗口對接，省去溝通成本。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all border-t-4 border-brand-blue">
+                        <h3 class="text-lg font-bold text-brand-blue mb-2">建材與設備供應</h3>
+                        <p class="text-gray-600 text-sm">家具、廚具、衛浴設備、照明燈具批發零售。提供高性價比的選材建議。</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">實績案例</h2>
+                <p class="text-gray-400">用細節說話，見證每一個空間的轉變</p>
+                <p class="text-xs text-brand-gold mt-2">* 如果您是下載後瀏覽，請確保圖片與網頁在同一資料夾</p>
+                
+                <!-- Filter Buttons (Simplified JS Logic) -->
+                <div class="flex flex-wrap justify-center gap-4 mt-8">
+                    <button class="filter-btn active px-6 py-2 rounded-full border border-brand-gold bg-brand-gold text-gray-900 font-medium transition-colors" data-filter="all">全部案例</button>
+                    <!-- Updated Text -->
+                    <button class="filter-btn px-6 py-2 rounded-full border border-gray-600 hover:border-white text-gray-300 hover:text-white transition-colors" data-filter="paint">工程實績</button>
+                    <button class="filter-btn px-6 py-2 rounded-full border border-gray-600 hover:border-white text-gray-300 hover:text-white transition-colors" data-filter="design">空間設計</button>
+                    <button class="filter-btn px-6 py-2 rounded-full border border-gray-600 hover:border-white text-gray-300 hover:text-white transition-colors" data-filter="commercial">商業空間</button>
+                </div>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+                
+                <!-- Engineering Case 25: Large Scale/Construction -->
+                <div class="portfolio-item group relative overflow-hidden rounded-xl bg-gray-800" data-category="paint">
+                    <img src="LINE_ALBUM_留白事務所-網頁設計_260118_25.jpg" alt="工程施工現場" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" onerror="this.onerror=null; this.parentElement.style.backgroundColor='#333'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full w-full flex-col p-6 text-center\'><i class=\'fas fa-image text-4xl text-gray-500 mb-2\'></i><span class=\'text-sm text-gray-400\'>請將圖片放入資料夾<br>LINE_ALBUM_..._25.jpg</span></div>'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90 pointer-events-none"></div>
+                    <div class="absolute bottom-0 left-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform pointer-events-none">
+                        <span class="text-brand-gold text-xs font-bold uppercase tracking-wider mb-2 block">工程實績 • 施工中</span>
+                        <h3 class="text-xl font-bold mb-1">案場施工紀錄 (25)</h3>
+                        <p class="text-gray-400 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">專業工序與環境維護</p>
+                    </div>
+                </div>
+
+                <!-- Engineering Case 12: Waterproofing? -->
+                <div class="portfolio-item group relative overflow-hidden rounded-xl bg-gray-800" data-category="paint">
+                    <img src="LINE_ALBUM_留白事務所-網頁設計_260118_12.jpg" alt="防水工程" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" onerror="this.onerror=null; this.parentElement.style.backgroundColor='#333'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full w-full flex-col p-6 text-center\'><i class=\'fas fa-image text-4xl text-gray-500 mb-2\'></i><span class=\'text-sm text-gray-400\'>請將圖片放入資料夾<br>LINE_ALBUM_..._12.jpg</span></div>'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90 pointer-events-none"></div>
+                    <div class="absolute bottom-0 left-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform pointer-events-none">
+                        <span class="text-brand-gold text-xs font-bold uppercase tracking-wider mb-2 block">工程實績 • 塗裝</span>
+                        <h3 class="text-xl font-bold mb-1">牆面塗裝工程 (12)</h3>
+                        <p class="text-gray-400 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">多道工序，細膩平整</p>
+                    </div>
+                </div>
+
+                <!-- Engineering Case 22: Public Area -->
+                <div class="portfolio-item group relative overflow-hidden rounded-xl bg-gray-800" data-category="paint">
+                    <img src="LINE_ALBUM_留白事務所-網頁設計_260118_22.jpg" alt="公設油漆" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" onerror="this.onerror=null; this.parentElement.style.backgroundColor='#333'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full w-full flex-col p-6 text-center\'><i class=\'fas fa-image text-4xl text-gray-500 mb-2\'></i><span class=\'text-sm text-gray-400\'>請將圖片放入資料夾<br>LINE_ALBUM_..._22.jpg</span></div>'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90 pointer-events-none"></div>
+                    <div class="absolute bottom-0 left-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform pointer-events-none">
+                        <span class="text-brand-gold text-xs font-bold uppercase tracking-wider mb-2 block">工程實績 • 公設</span>
+                        <h3 class="text-xl font-bold mb-1">公設梯廳翻新 (22)</h3>
+                        <p class="text-gray-400 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">柵欄烤漆與牆面修補</p>
+                    </div>
+                </div>
+
+                 <!-- Engineering Case 17: Details -->
+                 <div class="portfolio-item group relative overflow-hidden rounded-xl bg-gray-800" data-category="paint">
+                    <img src="LINE_ALBUM_留白事務所-網頁設計_260118_17.jpg" alt="細部塗裝" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" onerror="this.onerror=null; this.parentElement.style.backgroundColor='#333'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full w-full flex-col p-6 text-center\'><i class=\'fas fa-image text-4xl text-gray-500 mb-2\'></i><span class=\'text-sm text-gray-400\'>請將圖片放入資料夾<br>LINE_ALBUM_..._17.jpg</span></div>'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90 pointer-events-none"></div>
+                    <div class="absolute bottom-0 left-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform pointer-events-none">
+                        <span class="text-brand-gold text-xs font-bold uppercase tracking-wider mb-2 block">工程實績 • 細節</span>
+                        <h3 class="text-xl font-bold mb-1">特殊塗裝細節 (17)</h3>
+                        <p class="text-gray-400 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">轉角收邊與紋理處理</p>
+                    </div>
+                </div>
+
+                <!-- Engineering Case 23: Interior -->
+                <div class="portfolio-item group relative overflow-hidden rounded-xl bg-gray-800" data-category="paint">
+                    <img src="LINE_ALBUM_留白事務所-網頁設計_260118_23.jpg" alt="室內塗裝" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" onerror="this.onerror=null; this.parentElement.style.backgroundColor='#333'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full w-full flex-col p-6 text-center\'><i class=\'fas fa-image text-4xl text-gray-500 mb-2\'></i><span class=\'text-sm text-gray-400\'>請將圖片放入資料夾<br>LINE_ALBUM_..._23.jpg</span></div>'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90 pointer-events-none"></div>
+                    <div class="absolute bottom-0 left-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform pointer-events-none">
+                        <span class="text-brand-gold text-xs font-bold uppercase tracking-wider mb-2 block">工程實績 • 室內</span>
+                        <h3 class="text-xl font-bold mb-1">商空牆面粉刷 (23)</h3>
+                        <p class="text-gray-400 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">快速施工與高品質收尾</p>
+                    </div>
+                </div>
+
+                <!-- Engineering Case 19: Process -->
+                <div class="portfolio-item group relative overflow-hidden rounded-xl bg-gray-800" data-category="paint">
+                    <img src="LINE_ALBUM_留白事務所-網頁設計_260118_19.jpg" alt="施工過程" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" onerror="this.onerror=null; this.parentElement.style.backgroundColor='#333'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full w-full flex-col p-6 text-center\'><i class=\'fas fa-image text-4xl text-gray-500 mb-2\'></i><span class=\'text-sm text-gray-400\'>請將圖片放入資料夾<br>LINE_ALBUM_..._19.jpg</span></div>'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90 pointer-events-none"></div>
+                    <div class="absolute bottom-0 left-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform pointer-events-none">
+                        <span class="text-brand-gold text-xs font-bold uppercase tracking-wider mb-2 block">工程實績 • 紀錄</span>
+                        <h3 class="text-xl font-bold mb-1">施工架設與前置 (19)</h3>
+                        <p class="text-gray-400 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">安全第一的施工規範</p>
+                    </div>
+                </div>
+
+                <!-- Engineering Case 7 -->
+                <div class="portfolio-item group relative overflow-hidden rounded-xl bg-gray-800" data-category="paint">
+                    <img src="LINE_ALBUM_留白事務所-網頁設計_260118_7.jpg" alt="工程實績" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" onerror="this.onerror=null; this.parentElement.style.backgroundColor='#333'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full w-full flex-col p-6 text-center\'><i class=\'fas fa-image text-4xl text-gray-500 mb-2\'></i><span class=\'text-sm text-gray-400\'>請將圖片放入資料夾<br>LINE_ALBUM_..._7.jpg</span></div>'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90 pointer-events-none"></div>
+                    <div class="absolute bottom-0 left-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform pointer-events-none">
+                        <span class="text-brand-gold text-xs font-bold uppercase tracking-wider mb-2 block">工程實績</span>
+                        <h3 class="text-xl font-bold mb-1">案場完工實拍 (07)</h3>
+                        <p class="text-gray-400 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">專業塗裝效果呈現</p>
+                    </div>
+                </div>
+
+                <!-- Engineering Case 14 -->
+                <div class="portfolio-item group relative overflow-hidden rounded-xl bg-gray-800" data-category="paint">
+                    <img src="LINE_ALBUM_留白事務所-網頁設計_260118_14.jpg" alt="工程實績" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" onerror="this.onerror=null; this.parentElement.style.backgroundColor='#333'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full w-full flex-col p-6 text-center\'><i class=\'fas fa-image text-4xl text-gray-500 mb-2\'></i><span class=\'text-sm text-gray-400\'>請將圖片放入資料夾<br>LINE_ALBUM_..._14.jpg</span></div>'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90 pointer-events-none"></div>
+                    <div class="absolute bottom-0 left-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform pointer-events-none">
+                        <span class="text-brand-gold text-xs font-bold uppercase tracking-wider mb-2 block">工程實績</span>
+                        <h3 class="text-xl font-bold mb-1">案場完工實拍 (14)</h3>
+                        <p class="text-gray-400 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">細節修補與防護</p>
+                    </div>
+                </div>
+
+                <!-- Engineering Case 11 -->
+                <div class="portfolio-item group relative overflow-hidden rounded-xl bg-gray-800" data-category="paint">
+                    <img src="LINE_ALBUM_留白事務所-網頁設計_260118_11.jpg" alt="工程實績" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" onerror="this.onerror=null; this.parentElement.style.backgroundColor='#333'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full w-full flex-col p-6 text-center\'><i class=\'fas fa-image text-4xl text-gray-500 mb-2\'></i><span class=\'text-sm text-gray-400\'>請將圖片放入資料夾<br>LINE_ALBUM_..._11.jpg</span></div>'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90 pointer-events-none"></div>
+                    <div class="absolute bottom-0 left-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform pointer-events-none">
+                        <span class="text-brand-gold text-xs font-bold uppercase tracking-wider mb-2 block">工程實績</span>
+                        <h3 class="text-xl font-bold mb-1">案場完工實拍 (11)</h3>
+                        <p class="text-gray-400 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">職人精神的展現</p>
+                    </div>
+                </div>
+
+                <!-- Engineering Case 20 -->
+                <div class="portfolio-item group relative overflow-hidden rounded-xl bg-gray-800" data-category="paint">
+                    <img src="LINE_ALBUM_留白事務所-網頁設計_260118_20.jpg" alt="工程實績" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" onerror="this.onerror=null; this.parentElement.style.backgroundColor='#333'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full w-full flex-col p-6 text-center\'><i class=\'fas fa-image text-4xl text-gray-500 mb-2\'></i><span class=\'text-sm text-gray-400\'>請將圖片放入資料夾<br>LINE_ALBUM_..._20.jpg</span></div>'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90 pointer-events-none"></div>
+                    <div class="absolute bottom-0 left-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform pointer-events-none">
+                        <span class="text-brand-gold text-xs font-bold uppercase tracking-wider mb-2 block">工程實績</span>
+                        <h3 class="text-xl font-bold mb-1">案場完工實拍 (20)</h3>
+                        <p class="text-gray-400 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">現場施工紀錄</p>
+                    </div>
+                </div>
+
+                <!-- Engineering Case 26 -->
+                <div class="portfolio-item group relative overflow-hidden rounded-xl bg-gray-800" data-category="paint">
+                    <img src="LINE_ALBUM_留白事務所-網頁設計_260118_26.jpg" alt="工程實績" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" onerror="this.onerror=null; this.parentElement.style.backgroundColor='#333'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full w-full flex-col p-6 text-center\'><i class=\'fas fa-image text-4xl text-gray-500 mb-2\'></i><span class=\'text-sm text-gray-400\'>請將圖片放入資料夾<br>LINE_ALBUM_..._26.jpg</span></div>'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90 pointer-events-none"></div>
+                    <div class="absolute bottom-0 left-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform pointer-events-none">
+                        <span class="text-brand-gold text-xs font-bold uppercase tracking-wider mb-2 block">工程實績</span>
+                        <h3 class="text-xl font-bold mb-1">案場完工實拍 (26)</h3>
+                        <p class="text-gray-400 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">結構強化與美化</p>
+                    </div>
+                </div>
+
+                <!-- Engineering Case 10 -->
+                <div class="portfolio-item group relative overflow-hidden rounded-xl bg-gray-800" data-category="paint">
+                    <img src="LINE_ALBUM_留白事務所-網頁設計_260118_10.jpg" alt="工程實績" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" onerror="this.onerror=null; this.parentElement.style.backgroundColor='#333'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full w-full flex-col p-6 text-center\'><i class=\'fas fa-image text-4xl text-gray-500 mb-2\'></i><span class=\'text-sm text-gray-400\'>請將圖片放入資料夾<br>LINE_ALBUM_..._10.jpg</span></div>'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90 pointer-events-none"></div>
+                    <div class="absolute bottom-0 left-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform pointer-events-none">
+                        <span class="text-brand-gold text-xs font-bold uppercase tracking-wider mb-2 block">工程實績</span>
+                        <h3 class="text-xl font-bold mb-1">案場完工實拍 (10)</h3>
+                        <p class="text-gray-400 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">完美收尾的堅持</p>
+                    </div>
+                </div>
+
+                <!-- Existing Item: Commercial Design (Placeholder) -->
+                <div class="portfolio-item group relative overflow-hidden rounded-xl bg-gray-800" data-category="design commercial">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="和泰汽車" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90 pointer-events-none"></div>
+                    <div class="absolute bottom-0 left-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform pointer-events-none">
+                        <span class="text-brand-gold text-xs font-bold uppercase tracking-wider mb-2 block">商業空間 • 品牌</span>
+                        <h3 class="text-xl font-bold mb-1">和泰汽車 / 台北仁濟</h3>
+                        <p class="text-gray-400 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">天花牆面修補、品牌形象塑造</p>
+                    </div>
+                </div>
+
+                <!-- Existing Item: Residential Design (Placeholder) -->
+                <div class="portfolio-item group relative overflow-hidden rounded-xl bg-gray-800" data-category="design">
+                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="豪宅設計" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90 pointer-events-none"></div>
+                    <div class="absolute bottom-0 left-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform pointer-events-none">
+                        <span class="text-brand-gold text-xs font-bold uppercase tracking-wider mb-2 block">住宅設計 • 大直</span>
+                        <h3 class="text-xl font-bold mb-1">明水路豪宅案</h3>
+                        <p class="text-gray-400 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">水晶燈飾、細膩收邊、完美交屋</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CSR Section -->
+    <section id="csr" class="py-20 bg-blue-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2">
+                    <div class="relative">
+                        <!-- Placeholder for CSR Image -->
+                        <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="公益活動" class="rounded-2xl shadow-xl w-full">
+                        <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg hidden md:block">
+                            <p class="font-bold text-brand-blue text-lg">白沙屯媽祖進香</p>
+                            <p class="text-sm text-gray-500">2024 公益物資發放</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <span class="text-brand-blue font-bold tracking-wider text-sm uppercase">CSR 企業社會責任</span>
+                    <h2 class="text-3xl font-bold text-gray-900 mt-2 mb-6">取之於社會，用之於社會</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        珅衡室內設計不僅專注於空間美學，更重視在地連結。我們積極參與宗教文化活動，如白沙屯媽祖、山邊媽祖北港徒步進香。
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        2024年，我們與皇榮室內設計合作，於北港發放120箱水、運動飲料及食品給辛苦的香燈腳。這份熱忱同樣體現在我們對待每一個客戶的態度上——真誠、奉獻、實在。
+                    </p>
+                    <a href="#" class="text-brand-blue font-bold hover:text-blue-800 transition-colors inline-flex items-center gap-2">
+                        查看更多公益紀錄 <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <!-- Contact Info -->
+                    <div class="bg-brand-blue p-10 text-white flex flex-col justify-between">
+                        <div>
+                            <h2 class="text-3xl font-bold mb-6">聯絡我們</h2>
+                            <p class="text-blue-100 mb-8">無論是工程估價、設計諮詢，或是有任何空間上的疑難雜症，歡迎隨時聯繫。</p>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-phone-alt"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-blue-200">工程諮詢 (熊貓)</p>
+                                        <p class="text-xl font-bold">0926-684-538</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-blue-200">服務據點</p>
+                                        <p class="font-medium">桃園市中壢區中建里延平路500號10樓之2</p>
+                                        <p class="text-sm mt-1 text-blue-200">辦公室鄰近湳雅夜市</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fab fa-instagram"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-blue-200">社群追蹤</p>
+                                        <a href="https://www.instagram.com/jacky_der/" target="_blank" class="font-medium hover:text-brand-gold transition-colors">@jacky_der</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-10">
+                            <p class="text-xs text-blue-300">* 工程排程提醒：目前工程預約已排至 2026 年中，敬請見諒。</p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="p-10">
+                        <form id="contactForm" class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">您的稱呼</label>
+                                <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-colors" placeholder="王先生/林小姐" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">聯絡電話</label>
+                                <input type="tel" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-colors" placeholder="0912-345-678" required>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">地點</label>
+                                    <select class="w-full px-4 py-2 border border-gray-300 rounded-lg outline-none bg-white">
+                                        <option>桃園市</option>
+                                        <option>台北市</option>
+                                        <option>新北市</option>
+                                        <option>基隆市</option>
+                                        <option>其他</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">需求類型</label>
+                                    <select class="w-full px-4 py-2 border border-gray-300 rounded-lg outline-none bg-white">
+                                        <option>室內油漆</option>
+                                        <option>外牆仿石漆</option>
+                                        <option>室內設計</option>
+                                        <option>老屋翻新</option>
+                                        <option>商業空間</option>
+                                        <option>其他</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">需求說明</label>
+                                <textarea rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-colors" placeholder="請簡述您的坪數、屋況、希望施工時間..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-3 bg-gray-900 text-white font-bold rounded-lg hover:bg-gray-800 transition-all shadow-md mt-2">
+                                送出諮詢
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-4">關於我們</h3>
+                    <p class="text-sm leading-relaxed">
+                        特耐塗創 x 珅衡設計<br>
+                        結合工程職人精神與專業設計美學，為您打造安全、舒適、有溫度的空間。
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-4">服務項目</h3>
+                    <ul class="text-sm space-y-2">
+                        <li><a href="#" class="hover:text-white">外牆仿石漆工程</a></li>
+                        <li><a href="#" class="hover:text-white">室內藝術塗裝</a></li>
+                        <li><a href="#" class="hover:text-white">住宅/商業空間設計</a></li>
+                        <li><a href="#" class="hover:text-white">統包工程管理</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-4">聯絡資訊</h3>
+                    <ul class="text-sm space-y-2">
+                        <li><i class="fas fa-phone mr-2"></i> 0926-684-538</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> 桃園市中壢區延平路500號</li>
+                        <li><i class="fas fa-envelope mr-2"></i> contact@example.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm">© 2026 特耐塗創工程行 & 珅衡室內設計有限公司. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white"><i class="fab fa-line"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Bottom CTA (Mobile Only) -->
+    <div class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 p-3 md:hidden flex gap-2 z-40 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
+        <a href="tel:0926684538" class="flex-1 bg-green-600 text-white py-2 rounded-lg text-center font-bold flex items-center justify-center gap-2">
+            <i class="fas fa-phone"></i> 電話諮詢
+        </a>
+        <a href="#contact" class="flex-1 bg-brand-blue text-white py-2 rounded-lg text-center font-bold flex items-center justify-center gap-2">
+            <i class="fas fa-calendar-check"></i> 預約丈量
+        </a>
+    </div>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        // 1. Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 2. Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg', 'bg-white');
+                navbar.classList.remove('bg-white/95');
+            } else {
+                navbar.classList.remove('shadow-lg', 'bg-white');
+                navbar.classList.add('bg-white/95');
+            }
+        });
+
+        // 3. Portfolio Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-brand-gold', 'text-gray-900', 'border-brand-gold');
+                    b.classList.add('text-gray-300', 'border-gray-600');
+                });
+                
+                // Add active class to clicked button
+                btn.classList.remove('text-gray-300', 'border-gray-600');
+                btn.classList.add('bg-brand-gold', 'text-gray-900', 'border-brand-gold');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                portfolioItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category').includes(filterValue)) {
+                        item.style.display = 'block';
+                        // Add fade in animation
+                        item.classList.add('fade-in-up');
+                    } else {
+                        item.style.display = 'none';
+                        item.classList.remove('fade-in-up');
+                    }
+                });
+            });
+        });
+
+        // 4. Contact Form Handler (Mock)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            const originalText = btn.innerText;
+            
+            btn.innerText = '發送中...';
+            btn.classList.add('opacity-75', 'cursor-not-allowed');
+            
+            // Simulate API call
+            setTimeout(() => {
+                alert('感謝您的諮詢！我們已收到您的訊息，會盡快由專人與您聯繫。');
+                btn.innerText = originalText;
+                btn.classList.remove('opacity-75', 'cursor-not-allowed');
+                this.reset();
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
